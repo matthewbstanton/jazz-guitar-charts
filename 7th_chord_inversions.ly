@@ -192,7 +192,7 @@ dominant-seventh-two-third = #'((mute 6)
                    (mute 1))
 diagram-size = #2.6
 % distance from one row of diagrams to the next; grows with the diagram size
-row-pitch = #(+ 4 (* 8.5 diagram-size))
+row-pitch = #(+ 4.8 (* 8.5 diagram-size))
 
 \markup \column {
   \fill-line { \huge \bold "7th Chord Inversions" }
@@ -229,14 +229,14 @@ row-pitch = #(+ 4 (* 8.5 diagram-size))
           \override #'(padding . 2)
           \override #'(font-size . 4)
           \table #'(-1 -1) {
-            \fret-diagram-with-fingers "4" ##t #1 #diagram-size #major-seventh-four-root
-            \fret-diagram-with-fingers "2" ##t #1 #diagram-size #major-seventh-two-root
-            \fret-diagram-with-fingers " " ##t #1 #diagram-size #major-seventh-four-first
-            \fret-diagram-with-fingers " " ##t #1 #diagram-size #major-seventh-two-first
-            \fret-diagram-with-fingers " " ##t #1 #diagram-size #major-seventh-four-second
-            \fret-diagram-with-fingers " " ##t #1 #diagram-size #major-seventh-two-second
-            \fret-diagram-with-fingers " " ##t #1 #diagram-size #major-seventh-four-third
-            \fret-diagram-with-fingers " " ##t #1 #diagram-size #major-seventh-two-third
+            \fret-diagram-with-footer "4" ##t #1 #diagram-size #major-seventh-four-root #'("R" "" "Δ7" "Δ3" "p5" "")
+            \fret-diagram-with-footer "2" ##t #1 #diagram-size #major-seventh-two-root #'("" "R" "p5" "Δ7" "Δ3" "")
+            \fret-diagram-with-footer " " ##t #1 #diagram-size #major-seventh-four-first #'("Δ3" "" "R" "p5" "Δ7" "")
+            \fret-diagram-with-footer " " ##t #1 #diagram-size #major-seventh-two-first #'("" "Δ3" "Δ7" "R" "p5" "")
+            \fret-diagram-with-footer " " ##t #1 #diagram-size #major-seventh-four-second #'("p5" "" "Δ3" "Δ7" "R" "")
+            \fret-diagram-with-footer " " ##t #1 #diagram-size #major-seventh-two-second #'("" "p5" "R" "Δ3" "Δ7" "")
+            \fret-diagram-with-footer " " ##t #1 #diagram-size #major-seventh-four-third #'("Δ7" "" "p5" "R" "Δ3" "")
+            \fret-diagram-with-footer " " ##t #1 #diagram-size #major-seventh-two-third #'("" "Δ7" "Δ3" "p5" "R" "")
           }
         }
       }
@@ -249,14 +249,14 @@ row-pitch = #(+ 4 (* 8.5 diagram-size))
           \override #'(padding . 2)
           \override #'(font-size . 4)
           \table #'(-1 -1) {
-            \fret-diagram-with-fingers "4" ##t #1 #diagram-size #minor-seventh-four-root
-            \fret-diagram-with-fingers "2" ##t #1 #diagram-size #minor-seventh-two-root
-            \fret-diagram-with-fingers " " ##t #1 #diagram-size #minor-seventh-four-first
-            \fret-diagram-with-fingers " " ##t #1 #diagram-size #minor-seventh-two-first
-            \fret-diagram-with-fingers " " ##t #1 #diagram-size #minor-seventh-four-second
-            \fret-diagram-with-fingers " " ##t #1 #diagram-size #minor-seventh-two-second
-            \fret-diagram-with-fingers " " ##t #1 #diagram-size #minor-seventh-four-third
-            \fret-diagram-with-fingers " " ##t #1 #diagram-size #minor-seventh-two-third
+            \fret-diagram-with-footer "4" ##t #1 #diagram-size #minor-seventh-four-root #'("R" "" "b7" "b3" "p5" "")
+            \fret-diagram-with-footer "2" ##t #1 #diagram-size #minor-seventh-two-root #'("" "R" "p5" "b7" "b3" "")
+            \fret-diagram-with-footer " " ##t #1 #diagram-size #minor-seventh-four-first #'("b3" "" "R" "p5" "b7" "")
+            \fret-diagram-with-footer " " ##t #1 #diagram-size #minor-seventh-two-first #'("" "b3" "b7" "R" "p5" "")
+            \fret-diagram-with-footer " " ##t #1 #diagram-size #minor-seventh-four-second #'("p5" "" "b3" "b7" "R" "")
+            \fret-diagram-with-footer " " ##t #1 #diagram-size #minor-seventh-two-second #'("" "p5" "R" "b3" "b7" "")
+            \fret-diagram-with-footer " " ##t #1 #diagram-size #minor-seventh-four-third #'("b7" "" "p5" "R" "b3" "")
+            \fret-diagram-with-footer " " ##t #1 #diagram-size #minor-seventh-two-third #'("" "b7" "b3" "p5" "R" "")
           }
         }
       }
@@ -269,14 +269,14 @@ row-pitch = #(+ 4 (* 8.5 diagram-size))
           \override #'(padding . 2)
           \override #'(font-size . 4)
           \table #'(-1 -1) {
-            \fret-diagram-with-fingers "4" ##t #1 #diagram-size #dominant-seventh-four-root
-            \fret-diagram-with-fingers "2" ##t #1 #diagram-size #dominant-seventh-two-root
-            \fret-diagram-with-fingers " " ##t #1 #diagram-size #dominant-seventh-four-first
-            \fret-diagram-with-fingers " " ##t #1 #diagram-size #dominant-seventh-two-first
-            \fret-diagram-with-fingers " " ##t #1 #diagram-size #dominant-seventh-four-second
-            \fret-diagram-with-fingers " " ##t #2 #diagram-size #dominant-seventh-two-second
-            \fret-diagram-with-fingers " " ##t #1 #diagram-size #dominant-seventh-four-third
-            \fret-diagram-with-fingers " " ##t #1 #diagram-size #dominant-seventh-two-third
+            \fret-diagram-with-footer "4" ##t #1 #diagram-size #dominant-seventh-four-root #'("R" "" "b7" "Δ3" "p5" "")
+            \fret-diagram-with-footer "2" ##t #1 #diagram-size #dominant-seventh-two-root #'("" "R" "p5" "b7" "Δ3" "")
+            \fret-diagram-with-footer " " ##t #1 #diagram-size #dominant-seventh-four-first #'("Δ3" "" "R" "p5" "b7" "")
+            \fret-diagram-with-footer " " ##t #1 #diagram-size #dominant-seventh-two-first #'("" "Δ3" "b7" "R" "p5" "")
+            \fret-diagram-with-footer " " ##t #1 #diagram-size #dominant-seventh-four-second #'("p5" "" "Δ3" "b7" "R" "")
+            \fret-diagram-with-footer " " ##t #2 #diagram-size #dominant-seventh-two-second #'("" "p5" "R" "Δ3" "b7" "")
+            \fret-diagram-with-footer " " ##t #1 #diagram-size #dominant-seventh-four-third #'("b7" "" "p5" "R" "Δ3" "")
+            \fret-diagram-with-footer " " ##t #1 #diagram-size #dominant-seventh-two-third #'("" "b7" "Δ3" "p5" "R" "")
           }
         }
       }
