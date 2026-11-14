@@ -317,12 +317,30 @@ d-caged-pentatonic = #'((place-fret 6 12 "2")
 
 formulaMusic = \relative g, {
   \key g \major
-  g4^\markup{"I"}_\markup{\bold "W"}
-  a^\markup{"ii"}_\markup{\bold "W"}
-  b^\markup{"iii"}_\markup{\bold "H"}
-  c^\markup{"IV"}_\markup{\bold "W"}
-  d^\markup{"V"}_\markup{\bold "W"}
-  e^\markup{"vi"}_\markup{\bold "W"}
-  fis^\markup{"vii" \super "o"}_\markup{\bold "H"}
+  g4^\markup{"I"}
+  a^\markup{"ii"}
+  b^\markup{"iii"}
+  c^\markup{"IV"}
+  d^\markup{"V"}
+  e^\markup{"vi"}
+  fis^\markup{"vii" \super "o"}
   g^\markup{"I"}
+}
+
+% Whole/half steps, offset by an eighth so each label falls midway
+% between the two notes it describes.
+formulaSteps = {
+  % Spacers have no notehead to hang from, so set the height directly:
+  % one level line just below the lowest note.
+  \override TextScript.Y-offset = #-6.5
+  \override TextScript.self-alignment-X = #CENTER
+  s8
+  s4_\markup{\bold "W"}
+  s4_\markup{\bold "W"}
+  s4_\markup{\bold "H"}
+  s4_\markup{\bold "W"}
+  s4_\markup{\bold "W"}
+  s4_\markup{\bold "W"}
+  s4_\markup{\bold "H"}
+  s8
 }

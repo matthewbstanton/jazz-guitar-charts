@@ -186,7 +186,10 @@ diagram-size = #2.7
       <<
         % Guitar sounds an octave below the tab's written pitch, so the
         % standard notation is displayed transposed up an octave.
-        \new Staff { \transpose c c' \formulaMusic }
+        \new Staff <<
+          { \transpose c c' \formulaMusic }
+          \new Voice \formulaSteps
+        >>
       >>
       \layout {
         indent = 0
