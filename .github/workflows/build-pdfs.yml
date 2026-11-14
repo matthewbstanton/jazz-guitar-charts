@@ -16,7 +16,13 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install LilyPond
-        run: sudo apt-get update && sudo apt-get install -y lilypond
+        env:
+          LILYPOND_VERSION: "2.26.0"
+        run: |
+          curl -sL -o lilypond.tar.gz \
+            "https://gitlab.com/api/v4/projects/lilypond%2Flilypond/packages/generic/lilypond/${LILYPOND_VERSION}/lilypond-${LILYPOND_VERSION}-linux-x86_64.tar.gz"
+          tar xzf lilypond.tar.gz
+          echo "$PWD/lilypond-${LILYPOND_VERSION}/bin" >> "$GITHUB_PATH"
 
       - name: Build PDFs
         run: ./build.sh
