@@ -27,6 +27,9 @@ jobs:
       - name: Build PDFs
         run: ./build.sh
 
+      - name: Zip PDFs
+        run: (cd output && zip -r ../jazz-guitar-charts.zip .)
+
       - name: Release PDFs
         uses: softprops/action-gh-release@v2
         with:
@@ -36,3 +39,4 @@ jobs:
           files: |
             output/*.pdf
             output/songs/*.pdf
+            jazz-guitar-charts.zip
