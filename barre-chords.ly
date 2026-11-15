@@ -79,26 +79,26 @@ diagram-size = #4
   \fill-line { \line { \bold "E-Shaped" } }
   \fill-line {
     \line {
-      \fret-diagram-with-footer "Major" ##t #1 #diagram-size #e-shaped-chord #'("R" "p5" "R" "Δ3" "p5" "R")
+      \fret-diagram-with-footer "Major" ##t #1 #diagram-size #e-shaped-chord #'("R" "5" "R" "3" "5" "R")
       \hspace #2
-      \fret-diagram-with-footer "Minor" ##t #1 #diagram-size #e-shaped-minor-chord #'("R" "p5" "R" "b3" "p5" "R")
+      \fret-diagram-with-footer "Minor" ##t #1 #diagram-size #e-shaped-minor-chord #'("R" "5" "R" "b3" "5" "R")
       \hspace #2
-      \fret-diagram-with-footer "Dom7" ##t #1 #diagram-size #e-shaped-dom-chord #'("R" "p5" "b7" "Δ3" "p5" "R")
+      \fret-diagram-with-footer "Dom7" ##t #1 #diagram-size #e-shaped-dom-chord #'("R" "5" "b7" "3" "5" "R")
       \hspace #2
-      \fret-diagram-with-footer "Minor7" ##t #1 #diagram-size #e-shaped-minor-dom-chord #'("R" "p5" "b7" "b3" "p5" "R")
+      \fret-diagram-with-footer "Minor7" ##t #1 #diagram-size #e-shaped-minor-dom-chord #'("R" "5" "b7" "b3" "5" "R")
     }
   }
   \vspace #2
   \fill-line { \line { \bold "A-Shaped" } }
   \fill-line {
     \line {
-      \fret-diagram-with-footer "Major" ##t #1 #diagram-size #a-shaped-chord #'("" "R" "p5" "R" "Δ3" "p5")
+      \fret-diagram-with-footer "Major" ##t #1 #diagram-size #a-shaped-chord #'("" "R" "5" "R" "3" "5")
       \hspace #2
-      \fret-diagram-with-footer "Minor" ##t #1 #diagram-size #a-shaped-minor-chord #'("" "R" "p5" "R" "b3" "p5")
+      \fret-diagram-with-footer "Minor" ##t #1 #diagram-size #a-shaped-minor-chord #'("" "R" "5" "R" "b3" "5")
       \hspace #2
-      \fret-diagram-with-footer "Dom7" ##t #1 #diagram-size #a-shaped-dom-chord #'("" "R" "p5" "b7" "Δ3" "p5")
+      \fret-diagram-with-footer "Dom7" ##t #1 #diagram-size #a-shaped-dom-chord #'("" "R" "5" "b7" "3" "5")
       \hspace #2
-      \fret-diagram-with-footer "Minor7" ##t #1 #diagram-size #a-shaped-minor-dom-chord #'("" "R" "p5" "b7" "b3" "p5")
+      \fret-diagram-with-footer "Minor7" ##t #1 #diagram-size #a-shaped-minor-dom-chord #'("" "R" "5" "b7" "b3" "5")
     }
   }
 }

@@ -13,6 +13,6 @@ f-major-seventh-fifth-root = #'((mute 6)
   tagline = ##f
 }
 
-a-major-seventh = \markup \fret-diagram-with-footer "MAJOR 7" ##t #1 #diagram-size #f-major-seventh-fifth-root #'("" "R" "p5" "Δ7" "Δ3" "p5")
+a-major-seventh = \markup \fret-diagram-with-footer "MAJOR 7" ##t #1 #diagram-size #f-major-seventh-fifth-root #'("" "R" "5" "7" "3" "5")
 
 \standalone \a-major-seventh

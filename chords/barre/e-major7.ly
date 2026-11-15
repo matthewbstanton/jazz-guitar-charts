@@ -13,6 +13,6 @@ f-major-seventh-sixth-root = #'((place-fret 6 12 "1" red)
   tagline = ##f
 }
 
-e-major-seventh = \markup \fret-diagram-with-footer "MAJOR 7" ##t #1 #diagram-size #f-major-seventh-sixth-root #'("R" "" "Δ7" "Δ3" "p5" "")
+e-major-seventh = \markup \fret-diagram-with-footer "MAJOR 7" ##t #1 #diagram-size #f-major-seventh-sixth-root #'("R" "" "7" "3" "5" "")
 
 \standalone \e-major-seventh

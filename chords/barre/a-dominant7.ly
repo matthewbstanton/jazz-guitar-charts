@@ -13,6 +13,6 @@ f-dominant-seventh-fifth-root = #'((mute 6)
   tagline = ##f
 }
 
-a-dominant-seventh = \markup \fret-diagram-with-footer "DOMINANT 7" ##t #1 #diagram-size #f-dominant-seventh-fifth-root #'("" "R" "p5" "b7" "Δ3" "p5")
+a-dominant-seventh = \markup \fret-diagram-with-footer "DOMINANT 7" ##t #1 #diagram-size #f-dominant-seventh-fifth-root #'("" "R" "5" "b7" "3" "5")
 
 \standalone \a-dominant-seventh

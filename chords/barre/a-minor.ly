@@ -13,4 +13,4 @@ a-shaped-minor-chord = #'((mute 6)
   tagline = ##f
 }
 
-\markup \fret-diagram-with-footer "Minor" ##t #1 #4 #a-shaped-minor-chord #'("" "R" "p5" "R" "b3" "p5")
+\markup \fret-diagram-with-footer "Minor" ##t #1 #4 #a-shaped-minor-chord #'("" "R" "5" "R" "b3" "5")

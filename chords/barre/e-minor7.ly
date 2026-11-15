@@ -13,6 +13,6 @@ f-minor-seventh-sixth-root = #'((place-fret 6 12 "1" red)
   tagline = ##f
 }
 
-e-minor-seventh = \markup \fret-diagram-with-footer "MINOR 7" ##t #1 #diagram-size #f-minor-seventh-sixth-root #'("R" "" "b7" "b3" "p5" "")
+e-minor-seventh = \markup \fret-diagram-with-footer "MINOR 7" ##t #1 #diagram-size #f-minor-seventh-sixth-root #'("R" "" "b7" "b3" "5" "")
 
 \standalone \e-minor-seventh

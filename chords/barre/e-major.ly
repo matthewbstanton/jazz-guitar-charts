@@ -13,4 +13,4 @@ e-shaped-chord = #'((place-fret 6 12 "1" red)
   tagline = ##f
 }
 
-\markup \fret-diagram-with-footer "Major" ##t #1 #4 #e-shaped-chord #'("R" "p5" "R" "Δ3" "p5" "R")
+\markup \fret-diagram-with-footer "Major" ##t #1 #4 #e-shaped-chord #'("R" "5" "R" "3" "5" "R")
