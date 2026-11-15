@@ -16,8 +16,8 @@
 % each chord file draws its diagram at diagram-size
 diagram-size = #4
 
-\include "../chords/barre/e-major-v2.ly"
-\include "../chords/barre/e-minor-v2.ly"
+\include "../chords/barre/e-major.ly"
+\include "../chords/barre/e-minor.ly"
 \include "../chords/barre/a-major.ly"
 \include "../chords/barre/a-minor.ly"
 \include "../chords/barre/d-major.ly"
@@ -29,9 +29,9 @@ diagram-size = #4
   \fill-line { \line { \bold "E-Shaped" } }
   \fill-line {
     \line {
-      \e-major-vtwo
+      \e-major
       \hspace #2
-      \e-minor-vtwo
+      \e-minor
     }
   }
   \vspace #2
