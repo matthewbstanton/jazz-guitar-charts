@@ -11,9 +11,9 @@ as clean, printable PDFs.
 | `7th_chords.ly` | Core 7th chord shapes (maj7, dom7, min7, etc.) across the neck |
 | `7th_chord_inversions.ly` | Inversions of 7th chords, organized by root string |
 | `barre-chords.ly` | Movable E-shape and A-shape major/minor barre chords |
+| `jazz-barre-chords.ly` | Major, minor, and 7th chord shapes by root string, combined on one page |
 | `caged-system.ly` | The CAGED system — chord, function, scale, arpeggio, and pentatonic shapes for each of the five positions |
 | `scales.ly` | Scale fingering patterns (e.g. G major) shown as fingers, scale-degree function, and note names, plus linear/sequence/triad practice patterns |
-| `songs/girl-from-ipanema.ly` | Chord chart for "Girl from Ipanema" |
 
 Shared fret-diagram helpers and CAGED shape data live under `library/` and
 are `\include`d by the files above — they aren't standalone charts.

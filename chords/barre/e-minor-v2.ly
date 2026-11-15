@@ -13,4 +13,6 @@ e-shaped-minor-chord = #'((place-fret 6 12 "1" red)
   tagline = ##f
 }
 
-\markup \fret-diagram-with-footer "Minor" ##t #1 #4 #e-shaped-minor-chord #'("R" "5" "R" "b3" "5" "R")
+e-minor-vtwo = \markup \fret-diagram-with-footer "MINOR" ##t #1 #diagram-size #e-shaped-minor-chord #'("R" "5" "R" "b3" "5" "R")
+
+\standalone \e-minor-vtwo

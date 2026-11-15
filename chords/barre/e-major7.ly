@@ -5,8 +5,8 @@
 f-major-seventh-sixth-root = #'((place-fret 6 12 "1" red)
                    (mute 5)
                    (place-fret 4 13 "3")
-                   (place-fret 3 13 "4")
-                   (place-fret 2 12 "2")
+                   (place-fret 3 13 "4" blue)
+                   (place-fret 2 12 "2" darkgreen)
                    (mute 1))
 
 \header {

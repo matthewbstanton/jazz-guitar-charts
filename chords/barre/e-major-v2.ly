@@ -13,4 +13,6 @@ e-shaped-chord = #'((place-fret 6 12 "1" red)
   tagline = ##f
 }
 
-\markup \fret-diagram-with-footer "Major" ##t #1 #4 #e-shaped-chord #'("R" "5" "R" "3" "5" "R")
+e-major-vtwo = \markup \fret-diagram-with-footer "MAJOR" ##t #1 #diagram-size #e-shaped-chord #'("R" "5" "R" "3" "5" "R")
+
+\standalone \e-major-vtwo

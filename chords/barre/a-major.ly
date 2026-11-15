@@ -13,4 +13,6 @@ a-shaped-chord = #'((mute 6)
   tagline = ##f
 }
 
-\markup \fret-diagram-with-footer "Major" ##t #1 #4 #a-shaped-chord #'("" "R" "5" "R" "3" "5")
+a-major = \markup \fret-diagram-with-footer "MAJOR" ##t #1 #diagram-size #a-shaped-chord #'("" "R" "5" "R" "3" "5")
+
+\standalone \a-major

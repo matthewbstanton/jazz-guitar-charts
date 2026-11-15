@@ -5,7 +5,7 @@
 f-minor-seventh-fourth-root = #'((mute 6)
                    (mute 5)
                    (place-fret 4 15 "1" red)
-                   (place-fret 3 17 "4")
+                   (place-fret 3 17 "4" darkgreen)
                    (place-fret 2 16 "2")
                    (place-fret 1 16 "3"))
 

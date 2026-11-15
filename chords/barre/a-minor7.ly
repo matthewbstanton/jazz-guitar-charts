@@ -4,10 +4,10 @@
 
 f-minor-seventh-fifth-root = #'((mute 6)
                    (place-fret 5 8 "1" red)
-                   (place-fret 4 10 "3")
+                   (place-fret 4 10 "3" darkgreen)
                    (place-fret 3 8 "1")
                    (place-fret 2 9 "2")
-                   (place-fret 1 8 "1"))
+                   (place-fret 1 8 "1" darkgreen))
 
 \header {
   tagline = ##f

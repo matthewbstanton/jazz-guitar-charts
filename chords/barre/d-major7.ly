@@ -5,9 +5,9 @@
 f-major-seventh-fourth-root = #'((mute 6)
                    (mute 5)
                    (place-fret 4 15 "1" red)
-                   (place-fret 3 17 "2")
+                   (place-fret 3 17 "2" darkgreen)
                    (place-fret 2 17 "3")
-                   (place-fret 1 17 "4"))
+                   (place-fret 1 17 "4" blue))
 
 \header {
   tagline = ##f
