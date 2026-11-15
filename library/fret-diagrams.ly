@@ -10,6 +10,16 @@ standalone = #(define-void-function (diagram) (markup?)
                   (basename (car (ly:input-file-line-char-column (*location*))) ".ly"))
         (add-text diagram)))
 
+% Diagrams are drawn without their title when HIDE_DIAGRAM_TITLES is set in
+% the environment, for builds that print the chord name themselves.
+#(define hide-diagram-titles (getenv "HIDE_DIAGRAM_TITLES"))
+
+% Every diagram is drawn in the same size box when UNIFORM_DIAGRAMS is set in
+% the environment, so that swapping one image for another doesn't move the
+% grid: uniform-width is turned on, and room is left above the grid for the
+% X and O marks whether or not the chord has any.
+#(define uniform-diagrams (getenv "UNIFORM_DIAGRAMS"))
+
 % A fret diagram is only as wide as its ink: a dot on an outer string sticks
 % out further than an X, and an X further than a bare string. Rows of diagrams
 % therefore drift out of line with each other. With uniform-width set, every
@@ -24,7 +34,7 @@ standalone = #(define-void-function (diagram) (markup?)
            (width (lambda (stencil) (interval-length (ly:stencil-extent stencil X))))
            (diagram (draw '())))
 
-    (if (not uniform-width)
+    (if (not (or uniform-width uniform-diagrams))
         diagram
         ;; measure how much wider the diagram gets with a dot added on string 6,
         ;; and with one on string 1 as well; the first says how far left the
@@ -33,10 +43,13 @@ standalone = #(define-void-function (diagram) (markup?)
                (left-dot (list 'place-fret 6 fret))
                (right-dot (list 'place-fret 1 fret))
                (start (- (car (ly:stencil-extent diagram X))
-                         (- (width (draw (list left-dot))) (width diagram)))))
+                         (- (width (draw (list left-dot))) (width diagram))))
+               ;; a mute on any string adds the row of marks above the grid
+               (top (cdr (ly:stencil-extent
+                             (if uniform-diagrams (draw '((mute 6))) diagram) Y))))
         (ly:make-stencil (ly:stencil-expr diagram)
                          (cons start (+ start (width (draw (list left-dot right-dot)))))
-                         (ly:stencil-extent diagram Y))))))
+                         (cons (car (ly:stencil-extent diagram Y)) top))))))
 
 % Letters as finger labels require the raw fret-diagram-verbose markup
 % (chordmode/note fingerings only accept digits); "T" here marks a thumb.
@@ -60,8 +73,12 @@ standalone = #(define-void-function (diagram) (markup?)
         \markup
         \column {
             \center-align {
-                \fontsize #(- size 6) \bold #title
-                \vspace #0.5
+                #(if hide-diagram-titles
+                     empty-markup
+                     #{ \markup \fontsize #(- size 6) \bold #title #})
+                #(if hide-diagram-titles
+                     empty-markup
+                     #{ \markup \vspace #0.5 #})
                 \override #`(size . ,size)
                 \override #`(fret-diagram-details . 
                 (

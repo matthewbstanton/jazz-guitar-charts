@@ -1,5 +1,5 @@
 \version "2.26.0"
-\include "library/fret-diagrams.ly"
+\include "../library/fret-diagrams.ly"
 
 \header {
   tagline = ##f

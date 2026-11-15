@@ -1,6 +1,6 @@
 \version "2.26.0"
 
-\include "library/fret-diagrams.ly"
+\include "../library/fret-diagrams.ly"
 
 \header {
   tagline = ##f
@@ -14,18 +14,18 @@
 % each chord file draws its diagram at diagram-size
 diagram-size = #3.5
 
-\include "chords/barre/e-major7.ly"
-\include "chords/barre/e-dominant7.ly"
-\include "chords/barre/e-minor7.ly"
-\include "chords/barre/e-diminished7.ly"
-\include "chords/barre/a-major7.ly"
-\include "chords/barre/a-dominant7.ly"
-\include "chords/barre/a-minor7.ly"
-\include "chords/barre/a-diminished7.ly"
-\include "chords/barre/d-major7.ly"
-\include "chords/barre/d-dominant7.ly"
-\include "chords/barre/d-minor7.ly"
-\include "chords/barre/d-diminished7.ly"
+\include "../chords/barre/e-major7.ly"
+\include "../chords/barre/e-dominant7.ly"
+\include "../chords/barre/e-minor7.ly"
+\include "../chords/barre/e-diminished7.ly"
+\include "../chords/barre/a-major7.ly"
+\include "../chords/barre/a-dominant7.ly"
+\include "../chords/barre/a-minor7.ly"
+\include "../chords/barre/a-diminished7.ly"
+\include "../chords/barre/d-major7.ly"
+\include "../chords/barre/d-dominant7.ly"
+\include "../chords/barre/d-minor7.ly"
+\include "../chords/barre/d-diminished7.ly"
 
 \markup \column {
   \fill-line { \huge \bold "7th Chords" }

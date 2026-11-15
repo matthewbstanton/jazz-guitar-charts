@@ -1,6 +1,6 @@
 \version "2.26.0"
 
-\include "library/fret-diagrams.ly"
+\include "../library/fret-diagrams.ly"
 
 \header {
   tagline = ##f
@@ -16,10 +16,12 @@
 % each chord file draws its diagram at diagram-size
 diagram-size = #4
 
-\include "chords/barre/e-major-v2.ly"
-\include "chords/barre/e-minor-v2.ly"
-\include "chords/barre/a-major.ly"
-\include "chords/barre/a-minor.ly"
+\include "../chords/barre/e-major-v2.ly"
+\include "../chords/barre/e-minor-v2.ly"
+\include "../chords/barre/a-major.ly"
+\include "../chords/barre/a-minor.ly"
+\include "../chords/barre/d-major.ly"
+\include "../chords/barre/d-minor.ly"
 
 \markup \column {
   \fill-line { \huge \bold "Barre Chords" }
@@ -39,6 +41,15 @@ diagram-size = #4
       \a-major
       \hspace #2
       \a-minor
+    }
+  }
+  \vspace #2
+  \fill-line { \line { \bold "D-Shaped" } }
+  \fill-line {
+    \line {
+      \d-major
+      \hspace #2
+      \d-minor
     }
   }
 }

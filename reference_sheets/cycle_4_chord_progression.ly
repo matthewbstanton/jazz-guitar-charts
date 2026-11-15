@@ -1,6 +1,6 @@
 \version "2.26.0"
 
-\include "library/fret-diagrams.ly"
+\include "../library/fret-diagrams.ly"
 
 % Chord-quality suffixes, written the way they appear on a lead sheet:
 % \maj "I" -> I△7, \min "ii" -> ii-7, \dom "V" -> V7, \hdim "vii" -> viiø7

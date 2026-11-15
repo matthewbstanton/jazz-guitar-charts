@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Builds all top-level LilyPond (.ly) files and songs/*.ly, placing the
+# Builds the LilyPond (.ly) files in reference_sheets/ and songs/, placing the
 # generated output (PDF, etc.) into the output/ folder. Files under
 # library/ are includes, not standalone scores, and are skipped.
 # Single-diagram files under chords/*/ are built as cropped SVGs into
@@ -12,7 +12,7 @@ OUTPUT_DIR="output"
 mkdir -p "$OUTPUT_DIR" "$OUTPUT_DIR/songs"
 
 shopt -s nullglob
-ly_files=(*.ly)
+ly_files=(reference_sheets/*.ly)
 song_files=(songs/*.ly)
 chord_files=(chords/*/*.ly)
 shopt -u nullglob
