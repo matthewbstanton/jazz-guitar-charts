@@ -1,3 +1,15 @@
+% Size of a chord file's diagram when it is built on its own. A chart that
+% \includes chord files sets diagram-size first to draw them at its own size.
+#(define-once diagram-size 4)
+
+% Prints a chord file's diagram only when that file is the one being compiled,
+% so a chart can \include the file for its definition without the diagram
+% also landing on the chart's page.
+standalone = #(define-void-function (diagram) (markup?)
+    (if (string=? (basename (ly:parser-output-name))
+                  (basename (car (ly:input-file-line-char-column (*location*))) ".ly"))
+        (add-text diagram)))
+
 % A fret diagram is only as wide as its ink: a dot on an outer string sticks
 % out further than an X, and an X further than a bare string. Rows of diagrams
 % therefore drift out of line with each other. With uniform-width set, every

@@ -31,34 +31,6 @@ e-shaped-minor-dom-chord = #'((place-fret 6 12 "1" red)
                    (place-fret 2 12 "1" darkgreen)
                    (place-fret 1 12 "1" red))
 
-e-shaped-chord-function = #'((place-fret 6 12 "1" red)
-                   (place-fret 5 14 "5" darkgreen)
-                   (place-fret 4 14 "1" red)
-                   (place-fret 3 13 "3" blue)
-                   (place-fret 2 12 "5" darkgreen)
-                   (place-fret 1 12 "1" red))
-
-e-shaped-minor-chord-function = #'((place-fret 6 12 "1" red)
-                   (place-fret 5 14 "5" darkgreen)
-                   (place-fret 4 14 "1" red)
-                   (place-fret 3 12 "3b")
-                   (place-fret 2 12 "5" darkgreen)
-                   (place-fret 1 12 "1" red))
-
-e-shaped-dom-chord-function = #'((place-fret 6 12 "1" red)
-                   (place-fret 5 14 "5" darkgreen)
-                   (place-fret 4 12 "7b")
-                   (place-fret 3 13 "3" blue)
-                   (place-fret 2 12 "5" darkgreen)
-                   (place-fret 1 12 "1" red))
-
-e-shaped-minor-dom-chord-function = #'((place-fret 6 12 "1" red)
-                   (place-fret 5 14 "5" darkgreen)
-                   (place-fret 4 12 "7b")
-                   (place-fret 3 12 "3b")
-                   (place-fret 2 12 "5" darkgreen)
-                   (place-fret 1 12 "1" red))
-
 a-shaped-chord = #'((mute 6)
                    (place-fret 5 12 "1" red)
                    (place-fret 4 14 "2" darkgreen)
@@ -87,34 +59,6 @@ a-shaped-minor-dom-chord = #'((mute 6)
                    (place-fret 2 13 "2")
                    (place-fret 1 12 "1" darkgreen))
 
-a-shaped-chord-function = #'((mute 6)
-                   (place-fret 5 12 "1" red)
-                   (place-fret 4 14 "5" darkgreen)
-                   (place-fret 3 14 "1" red)
-                   (place-fret 2 14 "3" blue)
-                   (place-fret 1 12 "5" darkgreen))
-
-a-shaped-minor-chord-function = #'((mute 6)
-                   (place-fret 5 12 "1" red)
-                   (place-fret 4 14 "5" darkgreen)
-                   (place-fret 3 14 "1" red)
-                   (place-fret 2 13 "3b")
-                   (place-fret 1 12 "5" darkgreen))
-
-a-shaped-dom-chord-function = #'((mute 6)
-                   (place-fret 5 12 "1" red)
-                   (place-fret 4 14 "5" darkgreen)
-                   (place-fret 3 12 "7b")
-                   (place-fret 2 14 "3" blue)
-                   (place-fret 1 12 "5" darkgreen))
-
-a-shaped-minor-dom-chord-function = #'((mute 6)
-                   (place-fret 5 12 "1" red)
-                   (place-fret 4 14 "5" darkgreen)
-                   (place-fret 3 12 "7b")
-                   (place-fret 2 13 "3b")
-                   (place-fret 1 12 "5" darkgreen))
-
 \header {
   tagline = ##f
 }
@@ -135,52 +79,26 @@ diagram-size = #4
   \fill-line { \line { \bold "E-Shaped" } }
   \fill-line {
     \line {
-      \fret-diagram-with-fingers "Major" ##t #1 #diagram-size #e-shaped-chord 
+      \fret-diagram-with-footer "Major" ##t #1 #diagram-size #e-shaped-chord #'("R" "p5" "R" "Δ3" "p5" "R")
       \hspace #2
-      \fret-diagram-with-fingers "Minor" ##t #1 #diagram-size #e-shaped-minor-chord 
+      \fret-diagram-with-footer "Minor" ##t #1 #diagram-size #e-shaped-minor-chord #'("R" "p5" "R" "b3" "p5" "R")
       \hspace #2
-      \fret-diagram-with-fingers "Dom7" ##t #1 #diagram-size #e-shaped-dom-chord 
+      \fret-diagram-with-footer "Dom7" ##t #1 #diagram-size #e-shaped-dom-chord #'("R" "p5" "b7" "Δ3" "p5" "R")
       \hspace #2
-      \fret-diagram-with-fingers "Minor7" ##t #1 #diagram-size #e-shaped-minor-dom-chord
-    }
-  }
-  \vspace #2
-  \fill-line { \line { \bold "E-Shaped Function" } }
-  \fill-line {
-    \line {
-      \fret-diagram-with-fingers "Major" ##t #1 #diagram-size #e-shaped-chord-function
-      \hspace #2
-      \fret-diagram-with-fingers "Minor" ##t #1 #diagram-size #e-shaped-minor-chord-function  
-      \hspace #2
-      \fret-diagram-with-fingers "Dom7" ##t #1 #diagram-size #e-shaped-dom-chord-function
-      \hspace #2
-      \fret-diagram-with-fingers "Minor7" ##t #1 #diagram-size #e-shaped-minor-dom-chord-function
+      \fret-diagram-with-footer "Minor7" ##t #1 #diagram-size #e-shaped-minor-dom-chord #'("R" "p5" "b7" "b3" "p5" "R")
     }
   }
   \vspace #2
   \fill-line { \line { \bold "A-Shaped" } }
   \fill-line {
     \line {
-      \fret-diagram-with-fingers "Major" ##t #1 #diagram-size #a-shaped-chord 
+      \fret-diagram-with-footer "Major" ##t #1 #diagram-size #a-shaped-chord #'("" "R" "p5" "R" "Δ3" "p5")
       \hspace #2
-      \fret-diagram-with-fingers "Minor" ##t #1 #diagram-size #a-shaped-minor-chord 
+      \fret-diagram-with-footer "Minor" ##t #1 #diagram-size #a-shaped-minor-chord #'("" "R" "p5" "R" "b3" "p5")
       \hspace #2
-      \fret-diagram-with-fingers "Dom7" ##t #1 #diagram-size #a-shaped-dom-chord 
+      \fret-diagram-with-footer "Dom7" ##t #1 #diagram-size #a-shaped-dom-chord #'("" "R" "p5" "b7" "Δ3" "p5")
       \hspace #2
-      \fret-diagram-with-fingers "Minor7" ##t #1 #diagram-size #a-shaped-minor-dom-chord
-    }
-  }
-  \vspace #2
-  \fill-line { \line { \bold "A-Shaped Function" } }
-  \fill-line {
-    \line {
-      \fret-diagram-with-fingers "Major" ##t #1 #diagram-size #a-shaped-chord-function
-      \hspace #2
-      \fret-diagram-with-fingers "Minor" ##t #1 #diagram-size #a-shaped-minor-chord-function
-      \hspace #2
-      \fret-diagram-with-fingers "Dom7" ##t #1 #diagram-size #a-shaped-dom-chord-function
-      \hspace #2
-      \fret-diagram-with-fingers "Minor7" ##t #1 #diagram-size #a-shaped-minor-dom-chord-function
+      \fret-diagram-with-footer "Minor7" ##t #1 #diagram-size #a-shaped-minor-dom-chord #'("" "R" "p5" "b7" "b3" "p5")
     }
   }
 }
