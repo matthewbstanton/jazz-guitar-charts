@@ -40,3 +40,7 @@ Pushing to `main` runs [`.github/workflows/build-pdfs.yml`](.github/workflows/bu
 which builds all charts and publishes them as individual PDFs on a rolling
 [`latest` release](../../releases/latest) — no need to build locally just to
 grab a PDF.
+
+## License
+
+Released under the [MIT License](LICENSE).
