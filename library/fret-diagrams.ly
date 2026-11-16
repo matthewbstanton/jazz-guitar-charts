@@ -25,14 +25,51 @@ standalone = #(define-void-function (diagram) (markup?)
 % therefore drift out of line with each other. With uniform-width set, every
 % diagram takes up the room it would with a dot on both outer strings, so the
 % grids line up from row to row and sit centred under their titles.
+%
+% LilyPond only prints a label under a string that is fretted, so a placement
+% of (open-label string label) is accepted here as well: it draws as
+% (open string), with the label under the string where a dot's would go.
 #(define-markup-command (fret-diagram-uniform layout props placements) (list?)
-    #:properties ((uniform-width #f))
+    #:properties ((uniform-width #f)
+                  (size 1))
 
-    (let* ((draw (lambda (extra)
+    (let* ((labelled (filter (lambda (item) (eq? (car item) 'open-label)) placements))
+           (placements (map (lambda (item)
+                     (if (eq? (car item) 'open-label) (list 'open (cadr item)) item))
+                     placements))
+           (draw (lambda (extra)
                      (interpret-markup layout props
                          #{ \markup \fret-diagram-verbose #(append extra placements) #})))
            (width (lambda (stencil) (interval-length (ly:stencil-extent stencil X))))
-           (diagram (draw '())))
+           (plain (draw '()))
+           ;; the label is got by fretting the open string and then taking the
+           ;; dot back out of the drawing, leaving the label behind; the
+           ;; diagram keeps the width it has without the dot
+           (dot-on? (lambda (expr strings)
+                     (and (pair? expr)
+                          (eq? (car expr) 'translate-stencil)
+                          (pair? (caddr expr))
+                          (eq? (car (caddr expr)) 'circle)
+                          (any (lambda (string)
+                                   (< (abs (- (car (cadr expr)) (* size (- 6 string)))) 0.01))
+                               strings))))
+           (without-dots (lambda (expr strings)
+                     (let strip ((expr expr))
+                         (cond ((dot-on? expr strings) '())
+                               ((pair? expr) (cons (strip (car expr)) (strip (cdr expr))))
+                               (else expr)))))
+           (diagram (if (null? labelled)
+                        plain
+                        (let* ((fret (caddr (assq 'place-fret placements)))
+                               (fretted (draw (map (lambda (item)
+                                                 (list 'place-fret (cadr item) fret (caddr item)))
+                                                 labelled))))
+                        (ly:make-stencil
+                            (without-dots (ly:stencil-expr fretted) (map cadr labelled))
+                            (ly:stencil-extent plain X)
+                            (cons (min (car (ly:stencil-extent plain Y))
+                                       (car (ly:stencil-extent fretted Y)))
+                                  (cdr (ly:stencil-extent plain Y))))))))
 
     (if (not (or uniform-width uniform-diagrams))
         diagram
@@ -103,14 +140,18 @@ standalone = #(define-void-function (diagram) (markup?)
     ;; the footer is the same diagram drawn again underneath, with each
     ;; finger swapped for its string's label and printed below the string;
     ;; labels are given zero width so they can't shift the copy sideways
-    (let* ((footer-placements (map (lambda (item)
-                     (if (eq? (car item) 'place-fret)
-                         `(place-fret ,(cadr item) ,(caddr item)
-                                      ,(make-with-dimension-markup X '(0 . 0)
-                                           (make-center-align-markup
-                                               (list-ref footer (- 6 (cadr item)))))
-                                      ,@(list-tail item (min 4 (length item))))
-                         item))
+    (let* ((label (lambda (string)
+                     (make-with-dimension-markup X '(0 . 0)
+                         (make-center-align-markup (list-ref footer (- 6 string))))))
+           (footer-placements (map (lambda (item)
+                     (case (car item)
+                         ((place-fret)
+                          `(place-fret ,(cadr item) ,(caddr item)
+                                       ,(label (cadr item))
+                                       ,@(list-tail item (min 4 (length item)))))
+                         ((open)
+                          `(open-label ,(cadr item) ,(label (cadr item))))
+                         (else item)))
                      placements)))
 
     (interpret-markup layout props
