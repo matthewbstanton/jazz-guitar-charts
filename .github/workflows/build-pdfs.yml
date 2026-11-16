@@ -37,6 +37,7 @@ jobs:
           name: Latest build
           make_latest: true
           files: |
-            output/*.pdf
+            output/sheets/*.pdf
+            output/sheets/scales/*.pdf
             output/songs/*.pdf
             jazz-guitar-charts.zip
