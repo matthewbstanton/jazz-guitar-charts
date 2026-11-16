@@ -30,6 +30,18 @@ jobs:
       - name: Zip PDFs
         run: (cd output && zip -r ../jazz-guitar-charts.zip .)
 
+      # GitHub drops "#" from a release asset's name, and the upload then
+      # fails, so the PDFs are copied to one folder with it spelled out:
+      # a-shaped-scales-f#.pdf is released as a-shaped-scales-f-sharp.pdf
+      - name: Collect release PDFs
+        run: |
+          mkdir release
+          find output/sheets output/songs -name '*.pdf' -exec cp {} release/ \;
+          for f in release/*'#'*; do
+            [ -e "$f" ] || continue
+            mv "$f" "${f//#/-sharp}"
+          done
+
       - name: Release PDFs
         uses: softprops/action-gh-release@v2
         with:
@@ -37,7 +49,5 @@ jobs:
           name: Latest build
           make_latest: true
           files: |
-            output/sheets/*.pdf
-            output/sheets/scales/*.pdf
-            output/songs/*.pdf
+            release/*.pdf
             jazz-guitar-charts.zip
