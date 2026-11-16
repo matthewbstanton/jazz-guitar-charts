@@ -1,5 +1,6 @@
 \version "2.26.0"
 \include "../library/fret-diagrams.ly"
+\include "../library/footer.ly"
 
 \header {
   tagline = ##f
@@ -202,7 +203,7 @@ diatonicTriadsMusic = \relative g, {
 
 \markup \column {
 
-  \vspace #2
+  \vspace #0
   \line { \huge \bold "Groups of Four" }
   \line { "Move forward four linear steps, then reset to the second note:"}
   \line {  \bold "1-2-3-4, 2-3-4-5, 3-4-5-6, 4-5-6-7"}

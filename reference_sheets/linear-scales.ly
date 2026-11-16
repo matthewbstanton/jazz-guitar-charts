@@ -1,5 +1,7 @@
 \version "2.26.0"
 
+\include "../library/footer.ly"
+
 \header {
   tagline = ##f
 }

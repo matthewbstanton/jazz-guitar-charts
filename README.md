@@ -20,6 +20,9 @@ as clean, printable PDFs.
 Shared fret-diagram helpers and CAGED shape data live under `library/` and
 are `\include`d by the files above — they aren't standalone charts.
 
+Every chart also `\include`s `library/footer.ly`, which prints
+"Source: learnthefret.com" at the foot of each page.
+
 The single-string scales in `linear-scales/` are likewise `\include`d by
 `reference_sheets/linear-scales.ly`, one file per string.
 

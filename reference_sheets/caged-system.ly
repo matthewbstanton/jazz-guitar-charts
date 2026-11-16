@@ -1,6 +1,7 @@
 \version "2.26.0"
 
 \include "../library/fret-diagrams.ly"
+\include "../library/footer.ly"
 \include "../library/caged.ly"
 
 \header {
@@ -15,7 +16,7 @@
 }
 
 % the C shape has more frets in view than the others, so it needs a larger diagram
-diagram-size = #2.7
+diagram-size = #2.65
 
 % every diagram shows six frets, so they are all the same height: the widest
 % minor arpeggios span five frets, plus their empty first fret. The strings
