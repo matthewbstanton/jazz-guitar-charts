@@ -10,6 +10,7 @@ as clean, printable PDFs.
 | --- | --- |
 | `reference_sheets/7th_chords.ly` | Core 7th chord shapes (maj7, dom7, min7, etc.) across the neck |
 | `reference_sheets/7th_chord_inversions.ly` | Inversions of 7th chords, organized by root string |
+| `reference_sheets/cowboy-chords.ly` | The eight open "cowboy" chords (A, Am, D, Dm, E, Em, C, G) on a single page |
 | `reference_sheets/barre-chords.ly` | Movable E-shape and A-shape major/minor barre chords |
 | `reference_sheets/jazz-barre-chords.ly` | Major, minor, and 7th chord shapes, one page per root string |
 | `reference_sheets/caged-system.ly` | The CAGED system — chord, function, scale, arpeggio, and pentatonic shapes for each of the five positions |
