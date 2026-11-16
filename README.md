@@ -14,9 +14,13 @@ as clean, printable PDFs.
 | `reference_sheets/jazz-barre-chords.ly` | Major, minor, and 7th chord shapes, one page per root string |
 | `reference_sheets/caged-system.ly` | The CAGED system — chord, function, scale, arpeggio, and pentatonic shapes for each of the five positions |
 | `reference_sheets/scales.ly` | Scale fingering patterns (e.g. G major) shown as fingers, scale-degree function, and note names, plus linear/sequence/triad practice patterns |
+| `reference_sheets/linear-scales.ly` | The major scale formula, and the C major scale played up each string on its own |
 
 Shared fret-diagram helpers and CAGED shape data live under `library/` and
 are `\include`d by the files above — they aren't standalone charts.
+
+The single-string scales in `linear-scales/` are likewise `\include`d by
+`reference_sheets/linear-scales.ly`, one file per string.
 
 ## Building
 

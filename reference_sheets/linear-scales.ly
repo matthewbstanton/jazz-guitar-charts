@@ -96,32 +96,12 @@ formulaGaps = {
 % Linear scales: the C major scale up one string at a time
 % ---------------------------------------------------------------------------
 
-% One line of the sheet: the scale up a single string from its open note,
-% with left-hand fingers under the notes and frets in the tab. The margin
-% names the string and the scale degree (S.D.) of its open note.
-linearScale =
-#(define-scheme-function (string degree music fingers)
-   (markup? markup? ly:music? ly:music?)
-   #{
-     \score {
-       <<
-         % Guitar sounds an octave below the tab's written pitch, so the
-         % standard notation is displayed transposed up an octave.
-         \new Staff \with {
-           instrumentName = \markup \line {
-             \circle \bold #string "S.D." #degree
-           }
-         } { \new Voice = "scale" { \cadenzaOn \transpose c c' $music } }
-         \new Lyrics \with { instrumentName = "Finger" }
-           \lyricsto "scale" { #fingers }
-         \new TabStaff { \cadenzaOn $music }
-       >>
-     }
-   #})
-
-% Each line climbs the string, then drops back to land on the tonic.
-land = { \bar "||" \once \override TextScript.padding = #1.5 }
-landing = \markup \italic "land on C"
+\include "../linear-scales/c-major-high-e.ly"
+\include "../linear-scales/c-major-b.ly"
+\include "../linear-scales/c-major-g.ly"
+\include "../linear-scales/c-major-d.ly"
+\include "../linear-scales/c-major-a.ly"
+\include "../linear-scales/c-major-low-e.ly"
 
 \markup \column {
   \vspace #1
@@ -132,32 +112,9 @@ landing = \markup \italic "land on C"
   }
 }
 
-\linearScale "1" "3 (E)" {
-  e'1\1 f'\1 g'\1 a'\1 b'\1 c''\1 d''\1 e''\1 f''\1
-  \land c''\1^\landing \bar "|."
-} \lyricmode { "0" "1" "3" "1" "3" "4" "1" "3" "4" "4" }
-
-\linearScale "2" "7 (B)" {
-  b1\2 c'\2 d'\2 e'\2 f'\2 g'\2 a'\2 b'\2 c''\2
-  \land c'\2^\landing \bar "|."
-} \lyricmode { "0" "1" "3" "1" "2" "4" "1" "3" "4" "1" }
-
-\linearScale "3" "5 (G)" {
-  g1\3 a\3 b\3 c'\3 d'\3 e'\3 f'\3 g'\3 a'\3
-  \land c'\3^\landing \bar "|."
-} \lyricmode { "0" "1" "3" "4" "1" "3" "4" "1" "3" "4" }
-
-\linearScale "4" "2 (D)" {
-  d1\4 e\4 f\4 g\4 a\4 b\4 c'\4 d'\4 e'\4 f'\4
-  \land c'\4^\landing \bar "|."
-} \lyricmode { "0" "1" "2" "4" "1" "3" "4" "1" "3" "4" "4" }
-
-\linearScale "5" "6 (A)" {
-  a,1\5 b,\5 c\5 d\5 e\5 f\5 g\5 a\5 b\5 c'\5
-  \land c\5^\landing \bar "|."
-} \lyricmode { "0" "1" "2" "4" "1" "2" "4" "1" "3" "4" "2" }
-
-\linearScale "6" "3 (E)" {
-  e,1\6 f,\6 g,\6 a,\6 b,\6 c\6 d\6 e\6 f\6
-  \land c\6^\landing \bar "|."
-} \lyricmode { "0" "1" "3" "1" "3" "4" "1" "3" "4" "4" }
+\c-major-high-e
+\c-major-b
+\c-major-g
+\c-major-d
+\c-major-a
+\c-major-low-e
