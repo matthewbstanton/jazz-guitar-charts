@@ -14,7 +14,7 @@ as clean, printable PDFs.
 | `reference_sheets/barre-chords.ly` | Movable E-shape and A-shape major/minor barre chords |
 | `reference_sheets/jazz-barre-chords.ly` | Major, minor, and 7th chord shapes, one page per root string |
 | `reference_sheets/caged-system.ly` | The CAGED system — chord, function, scale, arpeggio, and pentatonic shapes for each of the five positions |
-| `reference_sheets/scales/a-shaped-scales-<key>.ly` | A-shaped scale fingering patterns for one major key (e.g. `a-shaped-scales-g.ly`, `a-shaped-scales-bb.ly`, `a-shaped-scales-f#.ly`), shown as fingers, scale-degree function, and note names, plus linear/sequence/triad practice patterns. One file for each of the 15 major keys |
+| `reference_sheets/scales/a-shaped-scales-<key>.ly` | A-shaped scale fingering patterns for one major key (e.g. `a-shaped-scales-g.ly`, `a-shaped-scales-bb.ly`, `a-shaped-scales-f#.ly`), shown as fingers, scale-degree function, and note names, plus linear/sequence/triad practice patterns. One file for each of 21 key names: the 15 major keys, plus the six enharmonic spellings that need double sharps or flats (A#, B#, D#, E#, Fb, G#) |
 | `reference_sheets/linear-scales.ly` | The major scale formula, and the C major scale played up each string on its own |
 
 Shared fret-diagram helpers and CAGED shape data live under `library/` and
